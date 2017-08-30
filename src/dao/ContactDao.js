@@ -5,7 +5,7 @@ function ContactDao ({Contact}){
         return Contact.findById(id).lean().exec()
             .then((mUser) => {
             if (!mUser) {
-                throw new UserNotExistError();
+                throw new UserNotExistError({});
             }
                 return mUser;
             });
@@ -27,7 +27,7 @@ function ContactDao ({Contact}){
         return Contact.findByIdAndUpdate(contact._id, {$set:contact}, {new:true}).lean().exec()
             .then((mUser)=>{
             if (!mUser) {
-                throw new UserNotExistError();
+                throw new UserNotExistError({});
             }
             return mUser;
             });
@@ -37,7 +37,7 @@ function ContactDao ({Contact}){
         return Contact.findByIdAndRemove(id).lean().exec()
             .then((mUser)=>{
                 if (!mUser) {
-                    throw new UserNotExistError();
+                    throw new UserNotExistError({});
                 }
                 return mUser;
             });

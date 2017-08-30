@@ -2,7 +2,7 @@ function ContactController({contactService}){
 
     this.get = (req,res,next) => {
         return contactService
-            .get({id:req.query.id})
+            .get({id:req.params.id})
             .then((contact)=>{
                 return res.status(200)
                     .json(contact);
@@ -42,7 +42,7 @@ function ContactController({contactService}){
 
     this.delete = (req,res,next) => {
         return contactService
-            .delete({id:req.query.id})
+            .delete({id:req.params.id})
             .then((contact)=>{
                 return res.status(200)
                     .json(contact);

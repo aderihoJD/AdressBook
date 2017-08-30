@@ -1,4 +1,7 @@
 {
   "ENV": "test",
-  "level": "debug"
+  "level": "debug",
+  "server": {
+    "port": 5000
+  }
 }

@@ -118,6 +118,12 @@ describe("Contact API test",()=>{
                         expect(res.body).to.have.property("name", name);
                         expect(res.body).to.have.property("email", email);
                         expect(res.body).to.have.property("phone_number", phone_number);
+                        return chai
+                            .request(`http://localhost:${port}`)
+                            .get(`/api/contact/${res.body._id}`)
+                    })
+                    .catch((err)=>{
+                        expect(err).to.have.status(422);
                         done();
                     })
                     .catch(done);

@@ -10,4 +10,4 @@ mockgoose
         return mongoose.connect('mongodb://test');
     });
 
-export default ()=>(mongoose);
+export default mongoose;

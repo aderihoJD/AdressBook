@@ -24,7 +24,7 @@ function validatePost(req, res, next) {
             if (result.isEmpty()) {
                 return next();
             }
-            throw new ValidationError(result);
+            throw new ValidationError({result});
         })
         .catch((err) => {
             return next(err)
@@ -51,7 +51,7 @@ function validateUpdate(req, res, next) {
             if (result.isEmpty()) {
                 return next();
             }
-            throw new ValidationError(result);
+            throw new ValidationError({result});
         })
         .catch((err) => {
             return next(err)
@@ -72,7 +72,7 @@ function validateGet(req, res, next) {
             if (result.isEmpty()) {
                 return next();
             }
-            throw new ValidationError(result);
+            throw new ValidationError({result});
         })
         .catch((err) => {
             return next(err)
@@ -93,7 +93,7 @@ function validateDelete(req, res, next) {
             if (result.isEmpty()) {
                 return next();
             }
-            throw new ValidationError(result);
+            throw new ValidationError({result});
         })
         .catch((err) => {
             return next(err)

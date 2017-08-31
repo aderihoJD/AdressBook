@@ -5,13 +5,19 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
     name: {
         type: String,
-        required: true
+        min:2,
+        max:32,
+        required: true,
     },
     email: {
-        type: String
+        min:2,
+        max:32,
+        type: String,
     },
     phone_number: {
-        type: String
+        min:2,
+        max:32,
+        type: String,
     }
 });
 

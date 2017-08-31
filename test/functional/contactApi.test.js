@@ -41,6 +41,24 @@ describe("Contact API test", () => {
                 })
                 .catch(done);
         });
+
+        it("should return 400 code error when send contact without name", (done) => {
+            const email = "ilya@mail.ru";
+            const phone_number = "+375-25-793-76-17";
+            chai
+                .request(`http://localhost:${port}`)
+                .post('/api/contact')
+                .send({email, phone_number})
+                .catch((err) => {
+                    expect(err).to.have.status(400);
+                    expect(err.response.body).to.have.property('name', 'ValidationError');
+                    expect(err.response.body).to.have.property('validationResult');
+                    expect(err.response.body.validationResult).to.have.property('name');
+                    done();
+                })
+                .catch(done);
+        });
+
     });
 
     describe("#GET /api/contact/:id", () => {

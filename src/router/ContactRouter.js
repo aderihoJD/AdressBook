@@ -12,6 +12,11 @@ export default ({contactController}) =>
 
 function validatePost(req, res, next) {
     req.checkBody({
+        name: {
+            notEmpty: {
+                errorMessage: 'Name is required.'
+            }
+        },
         email: {
             isEmail: {
                 errorMessage: 'Invalid email.'
@@ -34,11 +39,6 @@ function validatePost(req, res, next) {
 
 function validateUpdate(req, res, next) {
     req.checkBody({
-        name: {
-            notEmpty: {
-                errorMessage: 'Name is required.'
-            }
-        },
         email: {
             isEmail: {
                 errorMessage: 'Invalid email.'

@@ -8,6 +8,7 @@ import logger from '../lib/logger';
 import UserNotExistError from "../error/UserNotExistError";
 
 module.exports = () => (err, req, res, next) => {
+    console.log(err);
     return Promise
         .reject(err)
         .catch(ValidationError, (err) => {

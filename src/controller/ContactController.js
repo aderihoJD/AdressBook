@@ -1,9 +1,9 @@
-function ContactController({contactService}){
+function ContactController({contactService}) {
 
-    this.get = (req,res,next) => {
+    this.get = (req, res, next) => {
         return contactService
-            .get({id:req.params.id})
-            .then((contact)=>{
+            .get({id: req.params.id})
+            .then((contact) => {
                 return res.status(200)
                     .json(contact);
             })
@@ -12,18 +12,18 @@ function ContactController({contactService}){
 
     this.post = (req, res, next) => {
         return contactService
-            .post({contact:req.body})
-            .then((contact)=>{
+            .save({contact: req.body})
+            .then((contact) => {
                 return res.status(200)
-                   .json(contact);
+                    .json(contact);
             })
             .catch(next);
     };
 
-    this.getAll = (req,res,next) => {
+    this.getAll = (req, res, next) => {
         return contactService
             .getAll()
-            .then((contacts)=>{
+            .then((contacts) => {
                 return res.status(200)
                     .json(contacts);
             })
@@ -33,17 +33,17 @@ function ContactController({contactService}){
     this.update = (req, res, next) => {
         return contactService
             .update({contact: req.body})
-            .then((contact)=>{
+            .then((contact) => {
                 return res.status(200)
                     .json(contact);
             })
             .catch(next);
     };
 
-    this.delete = (req,res,next) => {
+    this.delete = (req, res, next) => {
         return contactService
-            .delete({id:req.params.id})
-            .then((contact)=>{
+            .delete({id: req.params.id})
+            .then((contact) => {
                 return res.status(200)
                     .json(contact);
             })

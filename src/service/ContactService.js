@@ -4,7 +4,7 @@ function ContactService({contactDao}){
         return contactDao.get({id});
     };
 
-    this.post = ({contact}) => {
+    this.save = ({contact}) => {
         return contactDao.save({contact});
     };
 

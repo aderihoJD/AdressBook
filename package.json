@@ -5,7 +5,9 @@
   "main": "main.js",
   "scripts": {
     "start": "set NODE_ENV=localhost&& nodemon src/main.js --exec babel-node",
-    "test": "set NODE_ENV=test&& mocha --compilers js:babel-register test/**/*.js"
+    "test": "set NODE_ENV=test&& mocha --compilers js:babel-register test/**/*.js",
+    "functional-test": "set NODE_ENV=test&& mocha --compilers js:babel-register test/functional/**/*.js",
+    "integration-test": "set NODE_ENV=test&& mocha --compilers js:babel-register test/integration/**/*.js"
   },
   "author": "Ilyas",
   "license": "ISC",

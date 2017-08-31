@@ -1,3 +1,13 @@
-/**
- * Created by User on 31.08.2017.
- */
+function ControlController({controlService}) {
+
+    this.clearDb = (req, res, next) => {
+        return controlService
+            .clearDb()
+            .then(() => {
+                return res.status(204).end();
+            })
+            .catch(next);
+    }
+}
+
+export default ControlController;

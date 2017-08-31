@@ -1,5 +1,5 @@
 import {Router} from "express";
 
-export default ({}) =>
+export default ({controlController}) =>
     Router()
-        .delete('/mongoDb',)
+        .delete('/mongoDb', controlController.clearDb)

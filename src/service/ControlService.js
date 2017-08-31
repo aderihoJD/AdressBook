@@ -1,3 +1,8 @@
-/**
- * Created by User on 31.08.2017.
- */
+function ControlService({controlDao}) {
+
+    this.clearDb = () => {
+        return controlDao.clearDb();
+    };
+}
+
+export default ControlService;

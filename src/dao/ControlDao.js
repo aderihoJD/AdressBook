@@ -1,3 +1,15 @@
-/**
- * Created by User on 31.08.2017.
- */
+import Promise from 'bluebird';
+
+function ControlDao({...collections}) {
+
+    this.clearDb = () => {
+        return Promise
+            .all(Object.values(collections))
+            .each((collection) => {
+                return collection.remove({}).exec();
+            })
+    }
+
+}
+
+export default ControlDao;

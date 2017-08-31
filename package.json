@@ -4,8 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "NODE_ENV=localhost nodemon src/main.js --exec babel-node",
-    "test": "NODE_ENV=test mocha --compilers js:babel-register test/**/*.js"
+    "start": "set NODE_ENV=localhost&& nodemon src/main.js --exec babel-node",
+    "test": "set NODE_ENV=test&& mocha --compilers js:babel-register test/**/*.js"
   },
   "author": "Ilyas",
   "license": "ISC",
@@ -22,6 +22,8 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-object-values-to-object-keys": "^1.0.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "chai": "^4.1.1",
     "chai-http": "^3.0.0",
